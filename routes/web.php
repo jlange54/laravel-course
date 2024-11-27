@@ -6,11 +6,6 @@ use function Pest\Laravel\get;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
-
-
-
-
-
 /**
  * Fallback Routes
  */
