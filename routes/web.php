@@ -56,6 +56,22 @@ Route::get('current-user',function () {
     return to_route('user.profile');
 })->name('current-user');
 
+/**
+ * Route Groups
+ */
+
+Route::prefix('admin')->group(function () {
+    Route::get('/users',function () {
+        return '/admin/users';
+    });
+});
+
+Route::namespace('admin.')->group(function () {
+    Route::get('users',function () {
+        return '/users';
+    });
+});
+
 
 
 
