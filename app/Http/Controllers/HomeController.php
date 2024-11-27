@@ -11,6 +11,7 @@ class HomeController extends Controller
         return View::make('home.index')
             ->with('title', 'Home')
             ->with('subtitle', 'Hello World!!!!!')
+            ->with('country', 'de')
             ->with('job', '<b>Developer</b>')
             ->with('hobbies', ['cycling', 'gaming']);
     }
