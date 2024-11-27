@@ -1,12 +1,5 @@
-<div @class([
-    'my-css-class',
-    'germany' => $country === 'de'
-    ])
-@style([
-    'color: #333',
-    'background-color: gold' => $country === 'de'
-    ])
->
-    <h1>Hello World</h1>
-    <p>occaecat veniam et laboris et duis adipisicing commodo occaecat aliquip laborum eu commodo do incididunt ut est adipisicing officia fugiat occaecat nostrud in magna eiusmod</p>
-</div>
+@include('shared.button', ['color' => 'red', 'button_text' => 'Submit'])
+@include('shared.alert', [
+    'background_color' => 'yellow',
+    'message' => 'There has been an error, please contact the site administrator'
+])
