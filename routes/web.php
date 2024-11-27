@@ -15,9 +15,12 @@ Named View Routes
 Route::view('/about-us', 'about') -> name('about');
 
 /**
- * Controllers
+ * Controller Groups
  */
-Route::get('/cars',[CarController::class,'index'])->name('cars.index');
+Route::controller(CarController::class)->group(function () {
+    Route::get('/cars', 'index') -> name('cars.index');
+    Route::get('/cars/create', 'create') -> name('cars.create');
+});
 
 /**
  * Fallback Routes
