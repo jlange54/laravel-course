@@ -3,13 +3,17 @@
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
+    $aboutPageUrl = route('about');
+    $eventPageUrl = route('event', ['lang' => 'de', 'id' => '1']);
+
+    dd($eventPageUrl);
     return view('welcome');
 });
 
 /*
-View Routes
+Named View Routes
 */
-Route::view('/about', 'about');
+Route::view('/about-us', 'about') -> name('about');
 
 /*
 Route Required Parameters
@@ -35,8 +39,23 @@ Route::get('/user/{username}', function (string $username) {
 
 Route::get('{lang}/event/{id}', function ($lang, $id) {
     return "It works: $id";
-})->where(['lang' =>'[a-z]{2}','id' => '\d{1,2}']);
+})->where(['lang' =>'[a-z]{2}','id' => '\d{1,2}'])->name('event');
 
 Route::get('/search/{keyword}', function (string $keyword) {
     return "Search: $keyword";
 })->where(['keyword' => '.+']);
+
+
+/**
+ * Named Routes Parameters
+ */
+
+Route::get('/user/profile',function () {})->name('user.profile');
+
+Route::get('current-user',function () {
+    return to_route('user.profile');
+})->name('current-user');
+
+
+
+
