@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     $aboutPageUrl = route('about');
     $eventPageUrl = route('event', ['lang' => 'de', 'id' => '1']);
-    
+
     return view('welcome');
 })->name('home');
 
@@ -78,5 +78,13 @@ Route::namespace('admin.')->group(function () {
 Route::fallback(function () {
     return to_route('home');
 });
+
+/**
+ * Number addition route
+ */
+
+Route::get('/calc/{num1}+{num2}', function ($num1, $num2) {
+    return $num1 + $num2;
+})->name('calc')->where(['num1' => '\d+', 'num2' => '\d+']);
 
 
