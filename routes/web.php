@@ -24,7 +24,8 @@ Route::view('/about-us', 'about') -> name('about');
 //    Route::get('/cars/create', 'create') -> name('cars.create');
 //});
 
-Route::get('/car',ShowCarController::class);
+Route::get('/car',CarController::class);
+Route::get('/cars',[CarController::class, 'index']);
 
 /**
  * Fallback Routes
