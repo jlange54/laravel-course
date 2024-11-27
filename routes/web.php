@@ -14,6 +14,9 @@ Named View Routes
 */
 Route::view('/about-us', 'about') -> name('about');
 
+/**
+ * Controllers
+ */
 Route::get('/cars',[CarController::class,'index'])->name('cars.index');
 
 /**
