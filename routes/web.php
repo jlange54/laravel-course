@@ -1,7 +1,8 @@
 <?php
 
 use App\Http\Controllers\CarController;
-use App\Http\Controllers\ShowCarController;
+use App\Http\Controllers\ProductController;
+
 use Illuminate\Support\Facades\Route;
 use function Pest\Laravel\get;
 
@@ -16,16 +17,10 @@ Named View Routes
 */
 Route::view('/about-us', 'about') -> name('about');
 
-/**
- * Single Action Contollers
- */
-//Route::controller(CarController::class)->group(function () {
-//    Route::get('/cars', 'index') -> name('cars.index');
-//    Route::get('/cars/create', 'create') -> name('cars.create');
-//});
-
-Route::get('/car',CarController::class);
-Route::get('/cars',[CarController::class, 'index']);
+Route::apiResources([
+    'cars' => CarController::class,
+    'products' => ProductController::class,
+]);
 
 /**
  * Fallback Routes
