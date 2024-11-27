@@ -5,10 +5,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     $aboutPageUrl = route('about');
     $eventPageUrl = route('event', ['lang' => 'de', 'id' => '1']);
-
-    dd($eventPageUrl);
+    
     return view('welcome');
-});
+})->name('home');
 
 /*
 Named View Routes
@@ -72,6 +71,12 @@ Route::namespace('admin.')->group(function () {
     });
 });
 
+/**
+ * Fallback Routes
+ */
 
+Route::fallback(function () {
+    return to_route('home');
+});
 
 
