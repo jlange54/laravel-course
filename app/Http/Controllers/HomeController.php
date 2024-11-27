@@ -8,6 +8,10 @@ use Illuminate\Support\Facades\View;
 class HomeController extends Controller
 {
     public function index() {
-        return View::make('home.index')->with('title', 'Home')->with('subtitle', 'Hello World!!!!!');
+        return View::make('home.index')
+            ->with('title', 'Home')
+            ->with('subtitle', 'Hello World!!!!!')
+            ->with('job', '<b>Developer</b>')
+            ->with('hobbies', ['cycling', 'gaming']);
     }
 }
