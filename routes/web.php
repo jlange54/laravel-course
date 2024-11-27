@@ -1,8 +1,6 @@
 <?php
 
-use App\Http\Controllers\CarController;
-use App\Http\Controllers\ProductController;
-
+use App\Http\Controllers\CalculatorController;
 use Illuminate\Support\Facades\Route;
 use function Pest\Laravel\get;
 
@@ -17,10 +15,10 @@ Named View Routes
 */
 Route::view('/about-us', 'about') -> name('about');
 
-Route::apiResources([
-    'cars' => CarController::class,
-    'products' => ProductController::class,
-]);
+Route::controller(CalculatorController::class)->group(function () {
+    Route::get('/calculate/sum/{num1}+{num2}', 'addition')->name('calculate.sum')->whereNumber(['num1', 'num2']);
+    Route::get('/calculate/subtract/{num1}-{num2}', 'subtraction')->name('calculate.subtract')->whereNumber(['num1', 'num2']);
+});
 
 /**
  * Fallback Routes
