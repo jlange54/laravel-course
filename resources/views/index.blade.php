@@ -1007,4 +1007,11 @@
         </section>
         <!--/ New Cars -->
     </main>
+
+    @section('footerLinks')
+        @parent
+        <a>Link 3</a>
+        <a>Link 4</a>
+    @endsection
+
 @endsection
