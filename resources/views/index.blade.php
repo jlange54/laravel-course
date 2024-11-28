@@ -2,6 +2,18 @@
 
 @section('title', 'Start')
 @section('content')
+
+    <x-card>
+        <x-slot name="title">Card title 1</x-slot>
+        Content 1
+        <x-slot name="footer">Card footer 1</x-slot>
+    </x-card>
+
+
+    <x-card :title="'test'" :footer="'footer'">
+    </x-card>
+
+
     <!-- Home Slider -->
     <section class="hero-slider">
         <!-- Carousel wrapper -->
