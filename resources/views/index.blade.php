@@ -1,7 +1,7 @@
-@extends('layouts.app')
+<x-app-layout
+    :title="'Home'"
+>
 
-@section('title', 'Start')
-@section('content')
     <!-- Home Slider -->
     <section class="hero-slider">
         <!-- Carousel wrapper -->
@@ -667,4 +667,4 @@
         <a>Link 4</a>
     @endsection
 
-@endsection
+</x-app-layout>
