@@ -7,7 +7,8 @@ use Illuminate\Support\Facades\View;
 
 class HomeController extends Controller
 {
-    public function index() {
+    public function index(): \Illuminate\Contracts\View\View
+    {
         return View::make('index');
     }
 }
