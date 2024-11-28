@@ -2,8 +2,7 @@
 
 @section('title', 'Start')
 @section('content')
-
-        <!-- Home Slider -->
+    <!-- Home Slider -->
     <section class="hero-slider">
         <!-- Carousel wrapper -->
         <div class="hero-slides">
